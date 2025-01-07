@@ -8,9 +8,9 @@ class RedisClient {
 	}
 
 	//a function returning true when redis connection is a success
-	isAlive() {
+	async isAlive() {
 		try {
-			this.client.connect();
+			await this.client.connect();
 			return true;
 		} catch (error) {
 			console.error('Failed to connect: ', error);
